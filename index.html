@@ -4,30 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>test</title>
 </head>
+
 <body style="
-    border-color: #0a6ed5;
+    width: 600px;
+    height: 600px;
+    padding-bottom: 1rem;
+    padding-top: 80px;
 ">
-<container
-        style="
-            background-color: #fff;
-        ">
+<button type="button" onclick="resetCounter()" style="
+                    position: absolute;
+                    left: 225px;
+                    top: 3%;
+                    text: bolder;
+                    color: #fff;
+                    background-color: #ca444a;
+                    padding: 10px 30px;
+                    border-radius: 18px;
+                    font-size: 20px;
+                    margin-left: 5px;
+                    font-family: 'Simplified Arabic';
+            ">تصفير العدادات
+</button>
+<section class="container" style="
+border: 2px solid #3579f5;
+">
     <h1 style="
-            position: center;
-            margin: 100px;
+            padding: 50px 0px;
+            margin-block-start: 0rem;
+            margin-block-end: 0rem;
+            border-bottom: 2px solid #6e6e6e;
             display: flex;
             background-color: #f7f7f7;
             align-items: center;
             justify-content: center;
             border-color: #000;
         ">الحمد لله</h1>
+    <div>
+        <button type="button" onclick="incrementClick()" style="
+                    position: absolute;
+                    left: 500px;
+                    text: bolder;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    background-color: #ca444a;
+                    padding: 20px 20px;
+                    border-radius: 20%;
+                    margin-top: 10px;
 
+            ">
+            <i class="fa fa-repeat fa-flip-horizontal" aria-hidden="true"
+               style="
+               font-size: 16px;
+               color: #ffffff;
+            "></i>
+        </button>
+    </div>
     <div style="
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 50px">
+            margin: 20px">
         <h3 style="
             position: center;
             padding: 60px;
@@ -36,34 +76,8 @@
             border-radius: 50%;"
             id="counter-label"><script>localStorage.getItem(n)</script>0</h3>
     </div>
-    <div style="
-            display: flex;
-            align-items: center;
-            justify-content: center">
+</section>
 
-        <button type="button" onclick="incrementClick()" style="
-                    position: center;
-                    text: bolder;
-                    color: #fff;
-                    background-color: #00622a;
-                    padding: 20px 50px;
-                    border-radius: 20px;
-                    margin-right: 5px;
-
-            ">click me</button>
-
-        <button type="button" onclick="resetCounter()" style="
-                    position: center;
-                    text: bolder;
-                    color: #006600;
-                    background-color: #fff;
-                    padding: 20px 50px;
-                    border-radius: 20px;
-                    margin-left: 5px;
-
-            ">reset</button>
-    </div>
-</container>
 <script type="text/javascript">
 
     let n = localStorage.getItem('counter-label');
