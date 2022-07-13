@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body style="background-color: #ffe87c;">
+<h1 style="
+        position: center;
+        margin: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    ">masbaha counter</h1>
+
+<div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px">
+<h3 style="position: center" id="counter-label">0</h3>
+</div>
+<div style="
+        display: flex;
+        align-items: center;
+        justify-content: center">
+
+    <button type="button" onclick="incrementClick()" style="
+                position: center;
+                text: bolder;
+                color: #fff;
+                background-color: #006600;
+                padding: 20px 50px;
+                border-radius: 20px;
+
+        ">click me</button>
+
+    <button type="button" onclick="resetCounter()" style="
+                position: center;
+                text: bolder;
+                color: #006600;
+                background-color: #fff;
+                padding: 20px 50px;
+                border-radius: 20px;
+
+        ">reset</button>
+</div>
+    <script type="text/javascript">
+    let counterVal = 0;
+
+    function incrementClick() {
+    updateDisplay(++counterVal);
+    }
+
+    function resetCounter() {
+    counterVal = 0;
+    updateDisplay(counterVal);
+    }
+
+    function updateDisplay(val) {
+    document.getElementById("counter-label").innerHTML = val;
+    }
+    </script>
+</body>
+</html>
