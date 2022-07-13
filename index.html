@@ -6,70 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
 </head>
-<body style="background-color: #ffe87c;">
-<h1 style="
-        position: center;
-        margin: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    ">masbaha counter</h1>
+<body style="
+    border-color: #0a6ed5;
+">
+<container
+        style="
+            background-color: #fff;
+        ">
+    <h1 style="
+            position: center;
+            margin: 100px;
+            display: flex;
+            background-color: #f7f7f7;
+            align-items: center;
+            justify-content: center;
+            border-color: #000;
+        ">الحمد لله</h1>
 
-<div style="
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 50px">
-<h3 style="
-        position: center;
-        padding: 60px;
-        color: #fff;
-        background-color: #0a6ed5;
-        border-radius: 50%;"
-        id="counter-label">0</h3>
-</div>
-<div style="
-        display: flex;
-        align-items: center;
-        justify-content: center">
+    <div style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px">
+        <h3 style="
+            position: center;
+            padding: 60px;
+            color: #fff;
+            background-color: #0a6ed5;
+            border-radius: 50%;"
+            id="counter-label"><script>localStorage.getItem(n)</script>0</h3>
+    </div>
+    <div style="
+            display: flex;
+            align-items: center;
+            justify-content: center">
 
-    <button type="button" onclick="incrementClick()" style="
-                position: center;
-                text: bolder;
-                color: #fff;
-                background-color: #00622a;
-                padding: 20px 50px;
-                border-radius: 20px;
-                margin-right: 5px;
+        <button type="button" onclick="incrementClick()" style="
+                    position: center;
+                    text: bolder;
+                    color: #fff;
+                    background-color: #00622a;
+                    padding: 20px 50px;
+                    border-radius: 20px;
+                    margin-right: 5px;
 
-        ">click me</button>
+            ">click me</button>
 
-    <button type="button" onclick="resetCounter()" style="
-                position: center;
-                text: bolder;
-                color: #006600;
-                background-color: #fff;
-                padding: 20px 50px;
-                border-radius: 20px;
-                margin-left: 5px;
+        <button type="button" onclick="resetCounter()" style="
+                    position: center;
+                    text: bolder;
+                    color: #006600;
+                    background-color: #fff;
+                    padding: 20px 50px;
+                    border-radius: 20px;
+                    margin-left: 5px;
 
-        ">reset</button>
-</div>
-    <script type="text/javascript">
-    let counterVal = 0;
+            ">reset</button>
+    </div>
+</container>
+<script type="text/javascript">
+
+    let n = localStorage.getItem('counter-label');
+    if (n === null) {
+        n = 0;
+    } else {
+        n++;
+    }
+    localStorage.setItem("counter-label", n);
 
     function incrementClick() {
-    updateDisplay(++counterVal);
+        updateDisplay(++n);
+        localStorage.setItem("counter-label", n);
+        console.log(n)
     }
 
     function resetCounter() {
-    counterVal = 0;
-    updateDisplay(counterVal);
+        n = 0;
+        updateDisplay(n);
     }
 
     function updateDisplay(val) {
-    document.getElementById("counter-label").innerHTML = val;
+        localStorage.setItem("counter-label", n);
+        document.getElementById("counter-label").innerHTML = val;
     }
-    </script>
+
+
+</script>
 </body>
 </html>
